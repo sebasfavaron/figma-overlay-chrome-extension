@@ -5,17 +5,18 @@
   <meta charset="utf-8">
   <style>
     body {
-      width: 300px;
+      width: 220px;
       padding: 20px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 14px;
       line-height: 1.5;
+      margin: 0;
     }
 
     .header {
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .icon {
@@ -23,7 +24,7 @@
       height: 32px;
       background: #18A0FB;
       border-radius: 8px;
-      margin-right: 10px;
+      margin-right: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,41 +38,71 @@
 
     h1 {
       margin: 0;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
+      color: #333;
     }
 
-    .instructions {
-      margin-bottom: 15px;
-      color: #666;
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
     }
 
-    .step {
-      margin-bottom: 10px;
+    .toggle-label {
+      font-weight: 500;
+      color: #555;
     }
 
-    .step-number {
-      display: inline-block;
+    .toggle {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle.enabled {
+      background: #18A0FB;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
       width: 20px;
       height: 20px;
-      background: #18A0FB;
-      color: white;
+      background: white;
       border-radius: 50%;
-      text-align: center;
-      font-size: 12px;
-      font-weight: bold;
-      line-height: 20px;
-      margin-right: 8px;
+      transition: transform 0.3s;
+    }
+
+    .toggle.enabled .toggle-slider {
+      transform: translateX(26px);
     }
 
     .status {
-      padding: 10px;
+      margin-top: 16px;
+      padding: 8px 12px;
       border-radius: 6px;
-      background: #f0f9ff;
-      border: 1px solid #e0f2fe;
-      color: #0369a1;
       text-align: center;
+      font-size: 12px;
       font-weight: 500;
+    }
+
+    .status.enabled {
+      background: #f0f9ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+
+    .status.disabled {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #dc2626;
     }
   </style>
 </head>
@@ -87,28 +118,18 @@
     <h1>Figma Overlay</h1>
   </div>
 
-  <div class="instructions">
-    <div class="step">
-      <span class="step-number">1</span>
-      Open your Figma design
-    </div>
-    <div class="step">
-      <span class="step-number">2</span>
-      Right-click a component → Copy as → SVG
-    </div>
-    <div class="step">
-      <span class="step-number">3</span>
-      Click the blue button on the website
-    </div>
-    <div class="step">
-      <span class="step-number">4</span>
-      Use arrow keys to fine-tune positioning
+  <div class="toggle-container">
+    <span class="toggle-label">Enable overlay</span>
+    <div class="toggle" id="toggle">
+      <div class="toggle-slider"></div>
     </div>
   </div>
 
-  <div class="status">
-    ✓ Figma Overlay is active on this page
+  <div class="status enabled" id="status">
+    ✓ Extension is enabled
   </div>
+
+  <script src="popup.js"></script>
 </body>
 
 </html>
