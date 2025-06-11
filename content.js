@@ -34,7 +34,7 @@
 
   // Check if extension is enabled on page load
   chrome.storage.sync.get(['figmaOverlayEnabled'], function (result) {
-    const isEnabled = result.figmaOverlayEnabled !== false; // Default to true
+    const isEnabled = result.figmaOverlayEnabled === true; // Default to false
     if (isEnabled) {
       injectFigmaOverlay();
     }
