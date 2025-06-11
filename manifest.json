@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Figma Overlay",
+  "version": "1.0.0",
+  "description": "A Chrome extension that adds a Figma overlay component to any webpage for pixel-perfect design comparison",
+  "permissions": ["activeTab", "clipboardRead"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Figma Overlay"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["figma-overlay.js", "figma-overlay-creator.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

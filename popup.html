@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      background: #18A0FB;
+      border-radius: 8px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .instructions {
+      margin-bottom: 15px;
+      color: #666;
+    }
+
+    .step {
+      margin-bottom: 10px;
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #18A0FB;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-right: 8px;
+    }
+
+    .status {
+      padding: 10px;
+      border-radius: 6px;
+      background: #f0f9ff;
+      border: 1px solid #e0f2fe;
+      color: #0369a1;
+      text-align: center;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M6 2h12c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-4v4c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V10c0-1.1.9-2 2-2h4V4c0-1.1.9-2 2-2zm6 4V4H6v6h4c1.1 0 2-.9 2-2zm-2 6H6v8h6v-8zm8-6h-6v2c0 1.1-.9 2-2 2h-2v4h8V6z" />
+      </svg>
+    </div>
+    <h1>Figma Overlay</h1>
+  </div>
+
+  <div class="instructions">
+    <div class="step">
+      <span class="step-number">1</span>
+      Open your Figma design
+    </div>
+    <div class="step">
+      <span class="step-number">2</span>
+      Right-click a component → Copy as → SVG
+    </div>
+    <div class="step">
+      <span class="step-number">3</span>
+      Click the blue button on the website
+    </div>
+    <div class="step">
+      <span class="step-number">4</span>
+      Use arrow keys to fine-tune positioning
+    </div>
+  </div>
+
+  <div class="status">
+    ✓ Figma Overlay is active on this page
+  </div>
+</body>
+
+</html>
